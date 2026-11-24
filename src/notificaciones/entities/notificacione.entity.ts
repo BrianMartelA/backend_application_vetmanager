@@ -21,7 +21,7 @@ export class Notificaciones {
     tipo:string;
     @Column({type:'varchar'})
     estado:string;
-    @CreateDateColumn({type:'timestamp'})
+    @CreateDateColumn({type:'timestamp',default: () => "timezone('America/Santiago', now())"})
     fecha_envio:Date;
     @Column()
     referencia_id:number;

@@ -37,7 +37,7 @@ export class Boleta {
   })
   estadoPago: string;
 
-  @CreateDateColumn({ name: 'fecha_emision', type: 'timestamp' })
+  @CreateDateColumn({ name: 'fecha_emision', type: 'timestamp',default: () => "timezone('America/Santiago', now())" })
   fechaEmision: Date;
 
   @Column({ name: 'metodo_pago', length: 20, nullable: true })
