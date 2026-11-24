@@ -36,7 +36,7 @@ export class Dueno {
   @Column({ type: 'text' })
   direccion: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({default: () => "timezone('America/Santiago', now())"})
   fecha_registro: Date;
 
   @OneToMany(() => Mascota, (mascota) => mascota.dueno)

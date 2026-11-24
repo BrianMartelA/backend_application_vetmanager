@@ -37,7 +37,7 @@ export class ContactoEmergenciaService {
     }
 
     let duenoExistente= await this.duenoRepository.findOne({
-      where:{rut:createConDueño.dueno.rut,negocio:{negocioId}}
+      where:{rut:rutNormalizado,negocio:{negocioId}}
     })
 
     if(!duenoExistente){

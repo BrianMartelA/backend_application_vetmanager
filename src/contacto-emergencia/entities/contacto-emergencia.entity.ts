@@ -18,7 +18,7 @@ export class ContactoEmergencia {
   razon_consulta: string;
   @Column({type:'varchar',length:50})
   nom_mascota: string;
-  @CreateDateColumn()
+  @CreateDateColumn({default: () => "timezone('America/Santiago', now())"})
   fecha_solicitud: Date;
   @UpdateDateColumn()
   fecha_actualizacion: Date;

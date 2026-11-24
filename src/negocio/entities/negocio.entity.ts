@@ -20,7 +20,7 @@ export class Negocio {
   direccion_negocio: string;
   @Column({ type: 'varchar', length: 12 })
   rut: string;
-  @CreateDateColumn()
+  @CreateDateColumn({default: () => "timezone('America/Santiago', now())"})
   fecha_registro: Date;
   @Column()
   correo:string;
